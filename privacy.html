@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="G.TECH Ghori privacy policy template.">
+  <title>Privacy Policy | G.TECH Ghori</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .privacy-hero {
+      padding: 100px 8% 75px;
+      text-align: center;
+      background: linear-gradient(135deg, #F5EFF8, #FCFAF7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-hero::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: rgba(139, 106, 168, 0.10);
+      top: -100px;
+      left: -60px;
+    }
+
+    .privacy-hero::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: rgba(211, 154, 155, 0.15);
+      bottom: -90px;
+      right: 8%;
+    }
+
+    .privacy-hero .eyebrow {
+      display: inline-block;
+      color: #6D4C87;
+      background: #FFFFFF;
+      border: 1px solid #E8DCEC;
+      border-radius: 30px;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .privacy-hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.1;
+      color: #30243A;
+      margin: 0 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .privacy-hero h1 span {
+      color: #8B6AA8;
+    }
+
+    .privacy-hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #716777;
+      font-size: 16px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .privacy-section {
+      padding: 75px 8%;
+      background: #FCFAF7;
+    }
+
+    .privacy-layout {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .privacy-sidebar {
+      position: sticky;
+      top: 110px;
+      background: #FFFFFF;
+      border: 1px solid #EEE5F1;
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: 0 10px 35px rgba(48, 36, 58, 0.05);
+    }
+
+    .privacy-sidebar h3 {
+      font-family: "Space Grotesk", sans-serif;
+      color: #30243A;
+      font-size: 18px;
+      margin: 0 0 18px;
+    }
+
+    .privacy-sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #716777;
+      font-size: 14px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+      margin-bottom: 4px;
+    }
+
+    .privacy-sidebar a:hover {
+      background: #F5EFF8;
+      color: #6D4C87;
+      padding-left: 17px;
+    }
+
+    .privacy-content {
+      background: #FFFFFF;
+      border: 1px solid #EEE5F1;
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 10px 35px rgba(48, 36, 58, 0.04);
+    }
+
+    .privacy-content .updated {
+      display: inline-block;
+      background: #F5EFF8;
+      color: #6D4C87;
+      border-radius: 8px;
+      padding: 9px 13px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .privacy-content section {
+      scroll-margin-top: 100px;
+      margin-bottom: 35px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #F0EAF2;
+    }
+
+    .privacy-content section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .privacy-content h2 {
+      font-family: "Space Grotesk", sans-serif;
+      color: #30243A;
+      font-size: 24px;
+      margin: 0 0 15px;
+    }
+
+    .privacy-content p {
+      color: #716777;
+      font-size: 15px;
+      line-height: 1.9;
+      margin: 0 0 13px;
+    }
+
+    .privacy-content ul {
+      padding-left: 22px;
+      margin: 12px 0;
+    }
+
+    .privacy-content li {
+      color: #716777;
+      font-size: 15px;
+      line-height: 1.9;
+      padding-left: 5px;
+      margin-bottom: 7px;
+    }
+
+    .privacy-note {
+      background: #F5EFF8;
+      border-left: 4px solid #8B6AA8;
+      border-radius: 0 14px 14px 0;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .privacy-note p {
+      margin: 0;
+      color: #51415F;
+    }
+
+    .privacy-contact {
+      margin-top: 30px;
+      padding: 28px;
+      background: linear-gradient(135deg, #F5EFF8, #FFF7F7);
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .privacy-contact h3 {
+      font-family: "Space Grotesk", sans-serif;
+      color: #30243A;
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .privacy-contact p {
+      margin-bottom: 18px;
+    }
+
+    .privacy-contact a {
+      display: inline-block;
+      text-decoration: none;
+      background: #6D4C87;
+      color: #FFFFFF;
+      border-radius: 30px;
+      padding: 13px 23px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .privacy-contact a:hover {
+      background: #30243A;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(48, 36, 58, 0.15);
+    }
+
+    @media (max-width: 900px) {
+      .privacy-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .privacy-sidebar {
+        position: static;
+      }
+
+      .privacy-sidebar nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .privacy-hero {
+        padding: 75px 6% 60px;
+      }
+
+      .privacy-section {
+        padding: 45px 5%;
+      }
+
+      .privacy-content {
+        padding: 25px 20px;
+      }
+
+      .privacy-content h2 {
+        font-size: 21px;
+      }
+
+      .privacy-sidebar {
+        padding: 20px;
+      }
+
+      .privacy-sidebar nav {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav-container">
+
+      <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+        <span class="brand-name">G.TECH</span>
+        <span class="brand-signature">GHORI</span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="industries.html">Industries</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="privacy-hero">
+      <span class="eyebrow">YOUR PRIVACY MATTERS</span>
+      <h1>Privacy <span>Policy</span></h1>
+      <p>
+        Understanding how information may be collected, used, and protected
+        is an important part of building trust.
+      </p>
+    </section>
+
+    <section class="privacy-section">
+      <div class="privacy-layout">
+
+        <aside class="privacy-sidebar">
+          <h3>On This Page</h3>
+          <nav>
+            <a href="#introduction">Introduction</a>
+            <a href="#information">Information We Collect</a>
+            <a href="#usage">How Information Is Used</a>
+            <a href="#cookies">Cookies</a>
+            <a href="#sharing">Information Sharing</a>
+            <a href="#security">Data Security</a>
+            <a href="#rights">Your Choices</a>
+            <a href="#changes">Policy Updates</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </aside>
+
+        <article class="privacy-content">
+
+          <span class="updated">PRIVACY POLICY TEMPLATE</span>
+
+          <div class="privacy-note">
+            <p>
+              This is a starter policy for the G.TECH Ghori website.
+              Before publishing, update it to accurately describe the
+              information your business actually collects and the services
+              and technologies it uses.
+            </p>
+          </div>
+
+          <section id="introduction">
+            <h2>01. Introduction</h2>
+            <p>
+              G.TECH Ghori values privacy and aims to handle personal
+              information responsibly. This policy explains how information
+              may be collected, used, stored, and shared when visitors use
+              this website.
+            </p>
+            <p>
+              By using this website, visitors should review this policy
+              to understand the applicable information practices.
+            </p>
+          </section>
+
+          <section id="information">
+            <h2>02. Information We Collect</h2>
+            <p>
+              Depending on the features enabled on this website, information
+              may include:
+            </p>
+            <ul>
+              <li>Contact details, such as name, email address, or phone number, when submitted through a form.</li>
+              <li>Messages and project details voluntarily shared by visitors.</li>
+              <li>Basic technical information, such as browser type or device information, if collected by hosting or analytics services.</li>
+            </ul>
+            <p>
+              Only include categories here that your website actually
+              collects. Do not request unnecessary personal information.
+            </p>
+          </section>
+
+          <section id="usage">
+            <h2>03. How Information Is Used</h2>
+            <p>
+              If information is collected, it may be used for purposes such as:
+            </p>
+            <ul>
+              <li>Responding to questions and project inquiries.</li>
+              <li>Providing requested services or information.</li>
+              <li>Maintaining website performance and security.</li>
+              <li>Meeting applicable legal obligations.</li>
+            </ul>
+            <p>
+              Information should only be used for appropriate purposes
+              explained to the person providing it.
+            </p>
+          </section>
+
+          <section id="cookies">
+            <h2>04. Cookies and Similar Technologies</h2>
+            <p>
+              Cookies are small files that websites may store in a visitor's
+              browser. They can support website functionality, preferences,
+              analytics, or other features.
+            </p>
+            <p>
+              This section should be updated to identify any cookies,
+              analytics tools, or third-party technologies actually used
+              by the live website.
+            </p>
+          </section>
+
+          <section id="sharing">
+            <h2>05. Information Sharing</h2>
+            <p>
+              If the website processes personal information, it should explain
+              whether information is shared with service providers, such as
+              hosting or form-processing providers, and for what purposes.
+            </p>
+            <p>
+              Describe actual sharing practices here. Do not claim that
+              information is never shared unless that statement is accurate
+              for the website and its service providers.
+            </p>
+          </section>
+
+          <section id="security">
+            <h2>06. Data Security and Retention</h2>
+            <p>
+              Appropriate safeguards should be used to protect information
+              handled by the business. No method of transmitting or storing
+              data can be guaranteed to be completely secure.
+            </p>
+            <p>
+              Explain how long information is retained, who can access it,
+              and how it is securely deleted when it is no longer needed.
+              These details should reflect your actual procedures.
+            </p>
+          </section>
+
+          <section id="rights">
+            <h2>07. Your Choices and Requests</h2>
+            <p>
+              Depending on applicable law and the circumstances, visitors
+              may be able to request access to, correction of, or deletion
+              of their personal information.
+            </p>
+            <p>
+              Add the correct process for submitting privacy requests and
+              explain any legal limitations that apply.
+            </p>
+          </section>
+
+          <section id="changes">
+            <h2>08. Policy Updates</h2>
+            <p>
+              This policy may need to change when website features,
+              business practices, or legal requirements change.
+              When updates are made, publish the revised policy and
+              update the effective date.
+            </p>
+            <p>
+              Effective date: <strong>[Add publication date]</strong>
+            </p>
+          </section>
+
+          <section id="contact">
+            <h2>09. Contact Us</h2>
+            <p>
+              For privacy-related questions, visitors should be given
+              a working contact method for the person or business
+              responsible for this website.
+            </p>
+
+            <div class="privacy-contact">
+              <h3>Have a Privacy Question?</h3>
+              <p>
+                Visit our contact page to find the appropriate contact details.
+              </p>
+              <a href="contact.html">Visit Contact Page →</a>
+            </div>
+          </section>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+          <span class="brand-name">G.TECH</span>
+          <span class="brand-signature">GHORI</span>
+        </a>
+        <p>
+          Thoughtful digital solutions for modern businesses.
+          Creating meaningful experiences through technology and design.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="team.html">Our Team</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="faq.html">FAQs</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 G.TECH Ghori. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+```

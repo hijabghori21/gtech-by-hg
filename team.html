@@ -1,0 +1,1273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the creative minds behind G.TECH Technologies.">
+    <title>Our Team | G.TECH Technologies</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ivory: #FCFAF7;
+            --white: #FFFFFF;
+            --lavender: #F5EFF8;
+            --purple: #8B6AA8;
+            --plum: #6D4C87;
+            --dark: #30243A;
+            --rose: #D39A9B;
+            --sage: #91BEB3;
+            --muted: #77707C;
+            --border: #E9E0EB;
+        }
+
+        /* GENERAL RESET */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+            background: var(--ivory);
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        body,
+        h1, h2, h3, h4, p {
+            overflow-wrap: break-word;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* NAVBAR */
+        .site-header {
+            position: relative;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+            width: 100%;
+            min-height: 84px;
+            padding: 16px 8%;
+            margin: 0;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #EDE5EF;
+            box-shadow: 0 4px 20px rgba(48, 36, 58, 0.035);
+        }
+
+        .site-header .brand {
+            display: inline-flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .site-header .brand-name {
+            display: block;
+            margin: 0;
+            color: var(--dark);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 29px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
+
+        .site-header .brand-signature {
+            display: block;
+            margin: 5px 0 0 2px;
+            color: var(--purple);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .site-header .menu-toggle {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .site-header .menu-button {
+            display: none;
+        }
+
+        .site-header .main-nav {
+            display: flex;
+            flex: 0 1 auto;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            gap: clamp(14px, 2vw, 27px);
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-header .main-nav a {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding: 9px 0;
+            color: #51475A;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: color .25s ease;
+        }
+
+        .site-header .main-nav a::after {
+            position: absolute;
+            right: 0;
+            bottom: 2px;
+            left: 0;
+            height: 2px;
+            background: var(--purple);
+            content: "";
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s ease;
+        }
+
+        .site-header .main-nav a:hover,
+        .site-header .main-nav a[href="team.html"] {
+            color: var(--plum);
+        }
+
+        .site-header .main-nav a:hover::after,
+        .site-header .main-nav a[href="team.html"]::after {
+            transform: scaleX(1);
+        }
+
+        /* HERO */
+        .team-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 105px 8% 95px;
+            background:
+                radial-gradient(circle at 88% 20%, #E8D8F0 0, transparent 28%),
+                radial-gradient(circle at 8% 100%, #F4DFDF 0, transparent 28%),
+                var(--lavender);
+        }
+
+        .hero-orbit {
+            position: absolute;
+            z-index: -1;
+            top: 40px;
+            right: 8%;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #8B6AA833;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: orbitFloat 8s ease-in-out infinite;
+        }
+
+        .hero-orbit::before,
+        .hero-orbit::after {
+            position: absolute;
+            border: 1px solid #8B6AA833;
+            border-radius: 50%;
+            content: "";
+        }
+
+        .hero-orbit::before {
+            inset: 25px;
+        }
+
+        .hero-orbit::after {
+            inset: 50px;
+        }
+
+        @keyframes orbitFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(12px); }
+        }
+
+        .team-hero > .eyebrow,
+        .team-hero h1,
+        .team-hero > p,
+        .team-hero .hero-links {
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--plum);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            flex: 0 0 auto;
+            width: 25px;
+            height: 2px;
+            background: var(--rose);
+            content: "";
+        }
+
+        .team-hero h1 {
+            max-width: 850px;
+            margin: 24px 0;
+            font-size: clamp(42px, 7vw, 84px);
+            line-height: 1.04;
+            letter-spacing: -4px;
+        }
+
+        .team-hero h1 span {
+            color: var(--purple);
+            font-style: italic;
+        }
+
+        .team-hero > p {
+            max-width: 560px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 14px 23px;
+            border: 1px solid var(--plum);
+            border-radius: 5px;
+            background: var(--plum);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background .3s ease,
+                color .3s ease,
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            background: var(--dark);
+            box-shadow: 0 12px 25px #30243A20;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--plum);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        /* SHARED SECTIONS */
+        .section {
+            width: 100%;
+            padding: 90px 8%;
+        }
+
+        .section-heading {
+            max-width: 690px;
+            margin: 0 0 45px;
+        }
+
+        .section-heading h2 {
+            margin: 18px 0;
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* TEAM CARDS */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: stretch;
+            gap: 25px;
+            width: 100%;
+        }
+
+        .team-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--white);
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: #CBB4D8;
+            box-shadow: 0 20px 45px #30243A10;
+        }
+
+        .portrait {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 100%;
+            aspect-ratio: 1 / .85;
+            overflow: hidden;
+            border-radius: 9px;
+            background: var(--lavender);
+        }
+
+        .portrait::before,
+        .portrait::after {
+            position: absolute;
+            border: 1px solid #8B6AA844;
+            border-radius: 50%;
+            content: "";
+            transition: transform .5s ease;
+        }
+
+        .portrait::before {
+            width: 190px;
+            height: 190px;
+        }
+
+        .portrait::after {
+            width: 140px;
+            height: 140px;
+        }
+
+        .team-card:hover .portrait::before {
+            transform: scale(1.13);
+        }
+
+        .team-card:hover .portrait::after {
+            transform: scale(.86);
+        }
+
+        .portrait-symbol {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--plum);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px #30243A12;
+        }
+
+        .portrait.rose { background: #F7E9E9; }
+        .portrait.sage { background: #E8F2EF; }
+        .portrait.cream { background: #F6EEE3; }
+        .portrait.blue { background: #E8EDF8; }
+        .portrait.pink { background: #F8EAF1; }
+        .portrait.lilac { background: #EEE5F5; }
+
+        .team-number {
+            display: inline-block;
+            margin-top: 24px;
+            color: var(--purple);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .team-card h3 {
+            margin: 9px 0;
+            font-size: 23px;
+            line-height: 1.3;
+            letter-spacing: -.5px;
+        }
+
+        .team-role {
+            color: var(--plum);
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .team-card p {
+            margin: 15px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .note {
+            margin-top: 28px;
+            padding: 15px 18px;
+            border-left: 3px solid var(--sage);
+            background: #EAF3F0;
+            color: #49655F;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* VALUES */
+        .values-section {
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .value-card {
+            min-width: 0;
+            padding: 30px;
+            border: 1px solid #EEE5EF;
+            border-radius: 10px;
+            background: var(--ivory);
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            background: var(--lavender);
+        }
+
+        .value-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--lavender);
+            color: var(--plum);
+            font-size: 23px;
+        }
+
+        .value-card h3 {
+            margin: 22px 0 10px;
+            font-size: 21px;
+        }
+
+        .value-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        /* CALL TO ACTION */
+        .join-section {
+            padding: 80px 8%;
+            background:
+                radial-gradient(circle at 90% 0%, #8B6AA82A, transparent 30%),
+                var(--dark);
+            color: var(--white);
+        }
+
+        .join-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .join-inner > div {
+            flex: 1 1 400px;
+            min-width: 0;
+        }
+
+        .join-inner h2 {
+            max-width: 650px;
+            margin: 15px 0;
+            font-size: clamp(32px, 4vw, 52px);
+            letter-spacing: -2px;
+            line-height: 1.15;
+        }
+
+        .join-inner p {
+            max-width: 560px;
+            margin: 0;
+            color: #D0C7D5;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .join-inner .eyebrow {
+            color: #D8B8E8;
+        }
+
+        .join-inner > .btn {
+            flex: 0 0 auto;
+            background: var(--rose);
+            border-color: var(--rose);
+            color: var(--dark);
+        }
+
+        .join-inner > .btn:hover {
+            background: var(--white);
+            border-color: var(--white);
+        }
+
+        /* FOOTER */
+        .site-footer {
+            width: 100%;
+            margin: 0;
+            padding: 65px 8% 0;
+            background: #F4EEF5;
+            color: var(--dark);
+        }
+
+        .site-footer .footer-main {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr;
+            align-items: start;
+            gap: 35px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 0 55px;
+        }
+
+        .site-footer .footer-brand-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-footer .footer-brand-column > .brand {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .site-footer .footer-brand-column .brand-name {
+            margin: 0;
+            color: var(--dark);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 31px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
+
+        .site-footer .footer-brand-column .brand-signature {
+            margin: 5px 0 0 2px;
+            color: var(--purple);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .site-footer .footer-brand-column > p {
+            max-width: 290px;
+            margin: 20px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .site-footer .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 13px;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-footer .footer-column h3 {
+            margin: 4px 0 7px;
+            color: var(--dark);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .site-footer .footer-column a {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+            transition: color .25s ease, transform .25s ease;
+        }
+
+        .site-footer .footer-column a:hover {
+            color: var(--plum);
+            transform: translateX(3px);
+        }
+
+        .site-footer .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 18px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 22px 0;
+            border-top: 1px solid #DED3E2;
+        }
+
+        .site-footer .footer-bottom p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .site-footer .footer-legal {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .site-footer .footer-legal a {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.8;
+            transition: color .25s ease;
+        }
+
+        .site-footer .footer-legal a:hover {
+            color: var(--plum);
+        }
+
+        /* TABLET */
+        @media (max-width: 1000px) {
+            .site-header {
+                padding-right: 5%;
+                padding-left: 5%;
+                gap: 20px;
+            }
+
+            .site-header .main-nav {
+                gap: 15px;
+            }
+
+            .site-header .main-nav a {
+                font-size: 12px;
+            }
+
+            .team-hero,
+            .section,
+            .join-section,
+            .site-footer {
+                padding-right: 5%;
+                padding-left: 5%;
+            }
+
+            .site-footer .footer-main {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 40px 30px;
+            }
+        }
+
+        /* MOBILE NAVIGATION */
+        @media (max-width: 760px) {
+            .site-header {
+                min-height: 76px;
+                padding: 14px 6%;
+            }
+
+            .site-header .brand-name {
+                font-size: 27px;
+            }
+
+            .site-header .menu-button {
+                display: flex;
+                flex: 0 0 auto;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                width: 43px;
+                height: 43px;
+                margin: 0;
+                padding: 9px;
+                border: 1px solid #E9DDED;
+                border-radius: 8px;
+                background: var(--white);
+                cursor: pointer;
+            }
+
+            .site-header .menu-button span {
+                display: block;
+                width: 21px;
+                height: 2px;
+                border-radius: 2px;
+                background: var(--plum);
+                transition: transform .25s ease, opacity .25s ease;
+            }
+
+            .site-header .main-nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+                gap: 0;
+                width: 100%;
+                max-height: calc(100vh - 76px);
+                overflow-y: auto;
+                margin: 0;
+                padding: 12px 6% 20px;
+                border-top: 1px solid #EDE5EF;
+                background: var(--white);
+                box-shadow: 0 16px 25px #30243A12;
+            }
+
+            .site-header .main-nav a {
+                display: block;
+                width: 100%;
+                padding: 14px 3px;
+                border-bottom: 1px solid #F0EAF1;
+                font-size: 14px;
+                white-space: normal;
+            }
+
+            .site-header .main-nav a::after {
+                display: none;
+            }
+
+            .site-header .menu-toggle:checked ~ .main-nav {
+                display: flex;
+            }
+
+            .site-header .menu-toggle:checked + .menu-button span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .site-header .menu-toggle:checked + .menu-button span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .site-header .menu-toggle:checked + .menu-button span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .team-hero {
+                padding: 75px 6%;
+            }
+
+            .team-hero h1 {
+                font-size: clamp(40px, 10vw, 65px);
+                letter-spacing: -2px;
+            }
+
+            .hero-orbit {
+                top: 30px;
+                right: -150px;
+                opacity: .6;
+            }
+
+            .section {
+                padding: 65px 6%;
+            }
+
+            .team-grid,
+            .values-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+
+            .team-card {
+                padding: 20px;
+            }
+
+            .team-card h3 {
+                font-size: 20px;
+            }
+
+            .portrait {
+                aspect-ratio: 1 / .8;
+            }
+
+            .portrait::before {
+                width: 150px;
+                height: 150px;
+            }
+
+            .portrait::after {
+                width: 110px;
+                height: 110px;
+            }
+
+            .portrait-symbol {
+                width: 78px;
+                height: 78px;
+                font-size: 24px;
+            }
+
+            .value-card {
+                padding: 24px;
+            }
+
+            .join-section {
+                padding: 65px 6%;
+            }
+
+            .site-footer {
+                padding: 50px 6% 0;
+            }
+
+            .site-footer .footer-main {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 35px 22px;
+                padding-bottom: 40px;
+            }
+
+            .site-footer .footer-brand-column {
+                grid-column: 1 / -1;
+            }
+
+            .site-footer .footer-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+                padding: 20px 0;
+            }
+
+            .site-footer .footer-legal {
+                gap: 18px;
+            }
+        }
+
+        /* SMALL MOBILE */
+        @media (max-width: 480px) {
+            .team-hero {
+                padding: 65px 6%;
+            }
+
+            .team-hero h1 {
+                font-size: clamp(37px, 10vw, 48px);
+                line-height: 1.12;
+                letter-spacing: -1.8px;
+            }
+
+            .team-hero > p {
+                font-size: 14px;
+            }
+
+            .hero-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-links .btn {
+                width: 100%;
+            }
+
+            .section-heading h2,
+            .join-inner h2 {
+                letter-spacing: -1px;
+            }
+
+            .team-grid,
+            .values-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .team-card {
+                padding: 22px;
+            }
+
+            .portrait {
+                aspect-ratio: 1 / .72;
+            }
+
+            .team-number {
+                margin-top: 20px;
+            }
+
+            .join-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .join-inner > .btn {
+                width: 100%;
+            }
+
+            .site-footer .footer-main {
+                gap: 32px 16px;
+            }
+
+            .site-footer .footer-column h3 {
+                font-size: 14px;
+            }
+
+            .site-footer .footer-column a {
+                font-size: 12px;
+            }
+
+            .site-footer .footer-legal {
+                gap: 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+            <span class="brand-name">G.TECH</span>
+            <span class="brand-signature">GHORI</span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-button" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="industries.html">Industries</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="team-hero">
+            <div class="hero-orbit" aria-hidden="true"></div>
+
+            <span class="eyebrow">The People Behind The Ideas</span>
+
+            <h1>
+                Good people.<br>
+                <span>Great technology.</span>
+            </h1>
+
+            <p>
+                Every meaningful digital experience starts with people who care.
+                At G.TECH, we bring creativity, thoughtful planning and technical
+                curiosity together to explore better digital possibilities.
+            </p>
+
+            <div class="hero-links">
+                <a href="#our-team" class="btn">Explore Our Team ↗</a>
+                <a href="contact.html" class="btn btn-outline">Work With Us</a>
+            </div>
+        </section>
+
+        <!-- TEAM -->
+        <section class="section" id="our-team">
+            <div class="section-heading">
+                <span class="eyebrow">Meet The Team</span>
+                <h2>Different skills.<br>One shared vision.</h2>
+                <p>
+                    Great digital work comes from combining different ways of
+                    thinking. These team profiles represent the key roles that
+                    contribute to a thoughtful technology project.
+                </p>
+            </div>
+
+            <div class="team-grid">
+
+                <article class="team-card">
+                    <div class="portrait">
+                        <div class="portrait-symbol">ST</div>
+                    </div>
+                    <span class="team-number">01 / STRATEGY</span>
+                    <h3>Strategy &amp; Planning</h3>
+                    <div class="team-role">Business &amp; Project Strategy</div>
+                    <p>
+                        Connects business goals with clear project plans,
+                        priorities and practical digital solutions.
+                    </p>
+                </article>
+
+                <article class="team-card">
+                    <div class="portrait rose">
+                        <div class="portrait-symbol">UX</div>
+                    </div>
+                    <span class="team-number">02 / DESIGN</span>
+                    <h3>UI/UX Design</h3>
+                    <div class="team-role">Research &amp; Experience Design</div>
+                    <p>
+                        Focuses on user needs, accessible layouts and
+                        visually consistent digital experiences.
+                    </p>
+                </article>
+
+                <article class="team-card">
+                    <div class="portrait sage">
+                        <div class="portrait-symbol">WD</div>
+                    </div>
+                    <span class="team-number">03 / DEVELOPMENT</span>
+                    <h3>Web Development</h3>
+                    <div class="team-role">Frontend &amp; Web Experiences</div>
+                    <p>
+                        Turns design concepts into responsive websites
+                        with a focus on clarity and performance.
+                    </p>
+                </article>
+
+                <article class="team-card">
+                    <div class="portrait cream">
+                        <div class="portrait-symbol">SW</div>
+                    </div>
+                    <span class="team-number">04 / ENGINEERING</span>
+                    <h3>Software Engineering</h3>
+                    <div class="team-role">Applications &amp; Systems</div>
+                    <p>
+                        Helps shape reliable software structures,
+                        useful features and maintainable solutions.
+                    </p>
+                </article>
+
+                <article class="team-card">
+                    <div class="portrait blue">
+                        <div class="portrait-symbol">AI</div>
+                    </div>
+                    <span class="team-number">05 / INNOVATION</span>
+                    <h3>AI &amp; Innovation</h3>
+                    <div class="team-role">Intelligent Digital Ideas</div>
+                    <p>
+                        Explores how responsible AI and emerging
+                        technologies can solve real problems.
+                    </p>
+                </article>
+
+                <article class="team-card">
+                    <div class="portrait pink">
+                        <div class="portrait-symbol">QA</div>
+                    </div>
+                    <span class="team-number">06 / QUALITY</span>
+                    <h3>Quality &amp; Testing</h3>
+                    <div class="team-role">Testing &amp; Improvement</div>
+                    <p>
+                        Checks functionality, usability and consistency
+                        to help create dependable digital products.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="note">
+                These are illustrative team roles, not verified employee
+                profiles. Add actual team members' names, photos and
+                biographies when those details are available.
+            </div>
+        </section>
+
+        <!-- VALUES -->
+        <section class="section values-section">
+            <div class="section-heading">
+                <span class="eyebrow">What Brings Us Together</span>
+                <h2>More than technical skills.</h2>
+                <p>
+                    The way we approach a problem matters just as much
+                    as the technology we use to solve it.
+                </p>
+            </div>
+
+            <div class="values-grid">
+
+                <article class="value-card">
+                    <div class="value-icon">✳</div>
+                    <h3>Creative Thinking</h3>
+                    <p>
+                        We explore fresh ideas and look beyond the
+                        obvious to discover better possibilities.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-icon">◇</div>
+                    <h3>Clear Communication</h3>
+                    <p>
+                        We value shared understanding, honest feedback
+                        and clear expectations at every stage.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-icon">↗</div>
+                    <h3>Continuous Learning</h3>
+                    <p>
+                        We stay curious, learn from challenges and
+                        keep improving our approach.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="join-section">
+            <div class="join-inner">
+                <div>
+                    <span class="eyebrow">Let's Create Together</span>
+                    <h2>Have an idea worth building?</h2>
+                    <p>
+                        Tell us about your goals, your challenge or the
+                        digital experience you want to create. Let's
+                        explore the possibilities together.
+                    </p>
+                </div>
+
+                <a href="contact.html" class="btn">Start A Conversation ↗</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-main">
+
+            <div class="footer-brand-column">
+                <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+                    <span class="brand-name">G.TECH</span>
+                    <span class="brand-signature">GHORI</span>
+                </a>
+
+                <p>
+                    Thoughtful design. Meaningful technology.
+                    Digital experiences built around people.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="about.html">About Us</a>
+                <a href="team.html">Our Team</a>
+                <a href="projects.html">Projects</a>
+                <a href="case-studies.html">Case Studies</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>What We Do</h3>
+                <a href="services.html">All Services</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="software.html">Software Solutions</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="faq.html">FAQs</a>
+                <a href="quote.html">Request a Quote</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 G.TECH Technologies. All rights reserved.</p>
+
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

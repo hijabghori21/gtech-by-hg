@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore G.TECH Technologies services, including web development, UI/UX design, software development, AI solutions and IT consulting.">
+    <title>Our Services | G.TECH Technologies</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* SERVICES PAGE */
+
+        .services-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 105px 0 90px;
+            background:
+                radial-gradient(ellipse at 90% 15%, rgba(211,154,155,.23), transparent 34%),
+                radial-gradient(ellipse at 8% 90%, rgba(145,190,179,.22), transparent 35%),
+                #FCFAF7;
+        }
+
+        .services-hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -110px;
+            bottom: -170px;
+            border: 1px solid rgba(139,106,168,.35);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 25px rgba(139,106,168,.04),
+                0 0 0 50px rgba(139,106,168,.04),
+                0 0 0 75px rgba(139,106,168,.04);
+            pointer-events: none;
+        }
+
+        .services-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .services-hero h1 {
+            max-width: 800px;
+            margin: 22px 0;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(42px, 7vw, 82px);
+            line-height: 1.08;
+            letter-spacing: -3px;
+        }
+
+        .services-hero h1 span {
+            color: #8B6AA8;
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .services-hero p {
+            max-width: 610px;
+            color: #6E6574;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .services-intro {
+            padding: 85px 0 35px;
+            background: #FFFFFF;
+        }
+
+        .services-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 35px;
+        }
+
+        .services-intro h2 {
+            margin: 16px 0 0;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.2;
+        }
+
+        .services-intro p {
+            color: #756B7B;
+            line-height: 1.9;
+        }
+
+        .services-showcase {
+            padding: 35px 0 100px;
+            background: #FFFFFF;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .service-box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 330px;
+            overflow: hidden;
+            padding: 30px;
+            border: 1px solid #EEE6F0;
+            border-radius: 24px;
+            background: #FCFAF7;
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+        }
+
+        .service-box:nth-child(2),
+        .service-box:nth-child(5) {
+            background: #F5EFF8;
+        }
+
+        .service-box:nth-child(3),
+        .service-box:nth-child(6) {
+            background: #F7F5F1;
+        }
+
+        .service-box:hover {
+            transform: translateY(-9px);
+            border-color: #C6ACD5;
+            box-shadow: 0 20px 45px rgba(48,36,58,.09);
+        }
+
+        .service-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .service-number {
+            color: #8B6AA8;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .service-symbol {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            place-items: center;
+            border: 1px solid rgba(139,106,168,.25);
+            border-radius: 18px;
+            background: rgba(255,255,255,.7);
+            color: #6D4C87;
+            font-family: Georgia, serif;
+            font-size: 27px;
+            transition: transform .35s ease, border-radius .35s ease;
+        }
+
+        .service-box:hover .service-symbol {
+            transform: rotate(-8deg) scale(1.06);
+            border-radius: 50%;
+        }
+
+        .service-box h3 {
+            margin: 0 0 14px;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 23px;
+            line-height: 1.3;
+        }
+
+        .service-box p {
+            margin: 0 0 25px;
+            color: #756B7B;
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .service-box .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            width: fit-content;
+            margin-top: auto;
+            color: #6D4C87;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: gap .25s ease;
+        }
+
+        .service-box .service-link:hover {
+            gap: 15px;
+        }
+
+        .service-link span {
+            font-size: 18px;
+        }
+
+        .process-section {
+            padding: 95px 0;
+            background: #F5EFF8;
+        }
+
+        .process-heading {
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        .process-heading h2 {
+            margin: 16px 0;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+        }
+
+        .process-heading p {
+            color: #756B7B;
+            line-height: 1.9;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .process-card {
+            padding: 25px 20px;
+            border-top: 2px solid #C6ACD5;
+            background: rgba(255,255,255,.65);
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-6px);
+            background: #FFFFFF;
+        }
+
+        .process-card .step {
+            color: #8B6AA8;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .process-card h3 {
+            margin: 18px 0 10px;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 20px;
+        }
+
+        .process-card p {
+            color: #756B7B;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .services-cta {
+            position: relative;
+            overflow: hidden;
+            margin: 85px auto;
+            padding: 65px 35px;
+            border-radius: 30px;
+            background: #30243A;
+            text-align: center;
+        }
+
+        .services-cta::before,
+        .services-cta::after {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .services-cta::before {
+            top: -100px;
+            left: -55px;
+            box-shadow: 0 0 0 22px rgba(255,255,255,.025),
+                        0 0 0 44px rgba(255,255,255,.025);
+        }
+
+        .services-cta::after {
+            right: -70px;
+            bottom: -115px;
+            box-shadow: 0 0 0 22px rgba(255,255,255,.025),
+                        0 0 0 44px rgba(255,255,255,.025);
+        }
+
+        .services-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .services-cta h2 {
+            margin: 16px 0;
+            color: #FFFFFF;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(30px, 5vw, 50px);
+            line-height: 1.2;
+        }
+
+        .services-cta p {
+            margin-bottom: 28px;
+            color: #E4DCE9;
+            line-height: 1.9;
+        }
+
+        .services-cta .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 25px;
+            border: 1px solid #FFFFFF;
+            border-radius: 50px;
+            background: #FFFFFF;
+            color: #30243A;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .3s ease, color .3s ease, transform .3s ease;
+        }
+
+        .services-cta .button:hover {
+            transform: translateY(-3px);
+            background: #F5EFF8;
+        }
+
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .services-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-hero {
+                padding: 70px 0 65px;
+            }
+
+            .services-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .services-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-box {
+                min-height: 290px;
+                padding: 25px;
+            }
+
+            .services-intro {
+                padding-top: 60px;
+            }
+
+            .services-showcase {
+                padding-bottom: 65px;
+            }
+
+            .process-section {
+                padding: 65px 0;
+            }
+
+            .services-cta {
+                margin: 55px auto;
+                padding: 50px 22px;
+                border-radius: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .service-box,
+            .service-symbol,
+            .service-link,
+            .process-card,
+            .services-cta .button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container navbar">
+
+            <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+                <span class="brand-name">G.TECH</span>
+                <span class="brand-signature">GHORI</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="contact.html" class="nav-cta">Let's Talk <span>↗</span></a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="services-hero">
+            <div class="container services-hero-content">
+
+                <span class="section-label">WHAT WE DO · OUR SERVICES</span>
+
+                <h1>
+                    Thoughtful ideas.<br>
+                    <span>Powerful</span> digital solutions.
+                </h1>
+
+                <p>
+                    We combine creativity, technology and strategy to build
+                    digital experiences that help businesses grow, connect
+                    with people and move confidently into the future.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#explore-services" class="button">
+                        Explore Our Services ↘
+                    </a>
+
+                    <a href="contact.html" class="text-link">
+                        Discuss Your Project ↗
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="services-intro">
+            <div class="container services-intro-grid">
+
+                <div>
+                    <span class="section-label">BUILT AROUND YOUR VISION</span>
+
+                    <h2>
+                        Everything you need to make your next idea happen.
+                    </h2>
+                </div>
+
+                <p>
+                    Every business has a different story. That's why we focus
+                    on understanding your goals before choosing the right
+                    digital approach. From the first concept to the final
+                    product, our services are designed around your needs.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- SERVICE CARDS -->
+        <section class="services-showcase" id="explore-services">
+            <div class="container">
+
+                <div class="services-grid">
+
+                    <article class="service-box">
+                        <div class="service-top">
+                            <span class="service-number">01 / DESIGN</span>
+                            <span class="service-symbol" aria-hidden="true">✳</span>
+                        </div>
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Modern, responsive websites built to look beautiful,
+                            work smoothly and deliver a better experience on
+                            every screen.
+                        </p>
+
+                        <a class="service-link" href="web-development.html">
+                            Explore Service <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-box">
+                        <div class="service-top">
+                            <span class="service-number">02 / EXPERIENCE</span>
+                            <span class="service-symbol" aria-hidden="true">◇</span>
+                        </div>
+
+                        <h3>UI/UX Design</h3>
+
+                        <p>
+                            Thoughtful interfaces, intuitive journeys and
+                            user-friendly experiences that make every
+                            interaction feel effortless.
+                        </p>
+
+                        <a class="service-link" href="ui-ux.html">
+                            Explore Service <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-box">
+                        <div class="service-top">
+                            <span class="service-number">03 / ENGINEERING</span>
+                            <span class="service-symbol" aria-hidden="true">⌘</span>
+                        </div>
+
+                        <h3>Software Development</h3>
+
+                        <p>
+                            Practical software solutions designed around
+                            real-world problems, business workflows and
+                            long-term reliability.
+                        </p>
+
+                        <a class="service-link" href="software.html">
+                            Explore Service <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-box">
+                        <div class="service-top">
+                            <span class="service-number">04 / INTELLIGENCE</span>
+                            <span class="service-symbol" aria-hidden="true">✧</span>
+                        </div>
+
+                        <h3>AI Solutions</h3>
+
+                        <p>
+                            Explore smarter workflows and useful AI-powered
+                            experiences that support decision-making and
+                            everyday productivity.
+                        </p>
+
+                        <a class="service-link" href="ai-solutions.html">
+                            Explore Service <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-box">
+                        <div class="service-top">
+                            <span class="service-number">05 / DIRECTION</span>
+                            <span class="service-symbol" aria-hidden="true">↗</span>
+                        </div>
+
+                        <h3>Digital Strategy</h3>
+
+                        <p>
+                            Clear digital roadmaps that connect your business
+                            objectives with the right tools, priorities
+                            and opportunities.
+                        </p>
+
+                        <a class="service-link" href="digital-strategy.html">
+                            Explore Service <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-box">
+                        <div class="service-top">
+                            <span class="service-number">06 / SUPPORT</span>
+                            <span class="service-symbol" aria-hidden="true">∞</span>
+                        </div>
+
+                        <h3>IT Consulting</h3>
+
+                        <p>
+                            Get practical guidance on technology choices,
+                            digital improvements and solutions that fit
+                            your business requirements.
+                        </p>
+
+                        <a class="service-link" href="it-consulting.html">
+                            Explore Service <span>↗</span>
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- OUR PROCESS -->
+        <section class="process-section">
+            <div class="container">
+
+                <div class="process-heading">
+                    <span class="section-label">HOW WE WORK</span>
+
+                    <h2>
+                        A simple process.<br>
+                        <span class="serif-accent">Meaningful results.</span>
+                    </h2>
+
+                    <p>
+                        Great digital work starts with listening, grows through
+                        collaboration and comes together with careful execution.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+
+                    <article class="process-card">
+                        <span class="step">STEP 01</span>
+                        <h3>Discover</h3>
+                        <p>
+                            We understand your goals, audience and the problem
+                            you want to solve.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="step">STEP 02</span>
+                        <h3>Plan</h3>
+                        <p>
+                            We define the direction, features and approach
+                            that suit your project.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="step">STEP 03</span>
+                        <h3>Create</h3>
+                        <p>
+                            We turn the plan into a considered design and
+                            carefully developed solution.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="step">STEP 04</span>
+                        <h3>Deliver</h3>
+                        <p>
+                            We review the work, refine the details and help
+                            you move forward confidently.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT CTA -->
+        <section class="container">
+            <div class="services-cta">
+                <div class="services-cta-content">
+
+                    <span class="section-label">HAVE SOMETHING IN MIND?</span>
+
+                    <h2>
+                        Let's turn your next idea into something real.
+                    </h2>
+
+                    <p>
+                        Tell us what you're imagining. Together, we can explore
+                        the right digital solution for your goals.
+                    </p>
+
+                    <a href="contact.html" class="button">
+                        Start a Conversation ↗
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-main">
+
+            <div class="footer-column footer-brand-column">
+                <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+                    <span class="brand-name">G.TECH</span>
+                    <span class="brand-signature">GHORI</span>
+                </a>
+
+                <p>
+                    Thoughtful digital experiences, creative technology
+                    and solutions built around your vision.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Our Services</a>
+                <a href="projects.html">Projects</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <a href="web-development.html">Web Development</a>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="software.html">Software Development</a>
+                <a href="ai-solutions.html">AI Solutions</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Get in Touch</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="quote.html">Request a Quote</a>
+                <a href="careers.html">Careers</a>
+                <a href="faq.html">FAQs</a>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 G.TECH Technologies. All rights reserved.</p>
+            <div>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

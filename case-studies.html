@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore digital project concepts and case studies from G.TECH Technologies.">
+    <title>Case Studies | G.TECH Technologies</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ivory: #FCFAF7;
+            --white: #FFFFFF;
+            --lavender: #F5EFF8;
+            --purple: #8B6AA8;
+            --plum: #6D4C87;
+            --dark: #30243A;
+            --rose: #D39A9B;
+            --sage: #91BEB3;
+            --muted: #77707C;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--ivory);
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .case-hero {
+            padding: 100px 8%;
+            background:
+                radial-gradient(circle at 85% 15%, #d9c7e8 0, transparent 28%),
+                radial-gradient(circle at 10% 95%, #f3dddd 0, transparent 25%),
+                var(--lavender);
+            overflow: hidden;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--plum);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 24px;
+            height: 2px;
+            background: var(--rose);
+        }
+
+        .case-hero h1 {
+            max-width: 900px;
+            margin: 25px 0;
+            font-size: clamp(43px, 7vw, 82px);
+            line-height: 1.04;
+            letter-spacing: -4px;
+        }
+
+        .case-hero h1 span {
+            color: var(--purple);
+            font-style: italic;
+        }
+
+        .case-hero p {
+            max-width: 600px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .meta-pill {
+            padding: 10px 15px;
+            border: 1px solid #d9c8e1;
+            border-radius: 30px;
+            background: #ffffff90;
+            color: var(--plum);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 85px 8%;
+        }
+
+        .section-heading {
+            max-width: 680px;
+            margin-bottom: 42px;
+        }
+
+        .section-heading h2 {
+            margin: 17px 0;
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .case-card {
+            overflow: hidden;
+            border: 1px solid #e9e0eb;
+            border-radius: 13px;
+            background: var(--white);
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px #30243a12;
+        }
+
+        .case-art {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        .art-lavender {
+            background: #EDE3F4;
+        }
+
+        .art-rose {
+            background: #F5E4E4;
+        }
+
+        .art-sage {
+            background: #E3F0EB;
+        }
+
+        .art-cream {
+            background: #F4EBDD;
+        }
+
+        .art-blue {
+            background: #E5EAF7;
+        }
+
+        .art-pink {
+            background: #F6E6EF;
+        }
+
+        .art-circle {
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 1px solid #6d4c873b;
+            border-radius: 50%;
+        }
+
+        .art-circle::before,
+        .art-circle::after {
+            content: "";
+            position: absolute;
+            border: 1px solid #6d4c873b;
+            border-radius: 50%;
+        }
+
+        .art-circle::before {
+            inset: 20px;
+        }
+
+        .art-circle::after {
+            inset: 40px;
+        }
+
+        .mockup {
+            position: relative;
+            z-index: 1;
+            width: min(100%, 310px);
+            padding: 17px;
+            border: 1px solid #ffffffb0;
+            border-radius: 12px;
+            background: #ffffffde;
+            box-shadow: 0 18px 45px #30243a18;
+            transition: transform .4s ease;
+        }
+
+        .case-card:hover .mockup {
+            transform: rotate(-2deg) scale(1.035);
+        }
+
+        .mockup-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 17px;
+            color: var(--plum);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .mockup-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .mockup-dots span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--rose);
+        }
+
+        .mockup-title {
+            margin: 0 0 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            line-height: 1.2;
+        }
+
+        .mockup-line {
+            height: 7px;
+            margin: 8px 0;
+            border-radius: 5px;
+            background: #e9e0eb;
+        }
+
+        .mockup-line.short {
+            width: 58%;
+        }
+
+        .mockup-line.medium {
+            width: 78%;
+        }
+
+        .mockup-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .mockup-boxes span {
+            height: 48px;
+            border-radius: 6px;
+            background: var(--lavender);
+        }
+
+        .mockup-boxes span:nth-child(2) {
+            background: #f4e0e0;
+        }
+
+        .mockup-boxes span:nth-child(3) {
+            background: #dcece6;
+        }
+
+        .case-content {
+            padding: 28px;
+        }
+
+        .case-category {
+            color: var(--plum);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .case-content h3 {
+            margin: 12px 0;
+            font-size: 27px;
+            letter-spacing: -.8px;
+        }
+
+        .case-content p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 18px 0;
+        }
+
+        .case-tags span {
+            padding: 7px 10px;
+            border-radius: 4px;
+            background: var(--lavender);
+            color: var(--plum);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .case-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: var(--plum);
+            font-size: 13px;
+            font-weight: 700;
+            transition: color .25s ease;
+        }
+
+        .case-link:hover {
+            color: var(--rose);
+        }
+
+        .process-section {
+            background: var(--white);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .process-card {
+            padding: 25px;
+            border: 1px solid #ece3ed;
+            border-radius: 10px;
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            background: var(--lavender);
+        }
+
+        .process-number {
+            color: var(--purple);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .process-card h3 {
+            margin: 18px 0 10px;
+            font-size: 19px;
+        }
+
+        .process-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .disclaimer {
+            margin-top: 28px;
+            padding: 16px 18px;
+            border-left: 3px solid var(--sage);
+            background: #eaf3f0;
+            color: #49655f;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .cta {
+            padding: 75px 8%;
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .cta h2 {
+            max-width: 650px;
+            margin: 16px 0;
+            font-size: clamp(32px, 4vw, 49px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+        }
+
+        .cta p {
+            max-width: 560px;
+            color: #d0c7d5;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .cta .eyebrow {
+            color: #d8b8e8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 22px;
+            border: 1px solid var(--rose);
+            border-radius: 5px;
+            background: var(--rose);
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 700;
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            background: var(--white);
+            border-color: var(--white);
+        }
+
+        @media (max-width: 900px) {
+            .process-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .case-hero {
+                padding: 75px 6%;
+            }
+
+            .case-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section {
+                padding: 65px 6%;
+            }
+
+            .case-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-art {
+                min-height: 245px;
+            }
+
+            .case-content {
+                padding: 23px;
+            }
+
+            .cta {
+                padding: 65px 6%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+            <span class="brand-name">G.TECH</span>
+            <span class="brand-signature">GHORI</span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-button" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="industries.html">Industries</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="case-hero">
+            <span class="eyebrow">Ideas Into Experiences</span>
+
+            <h1>Every project starts<br>with a <span>possibility.</span></h1>
+
+            <p>
+                Explore illustrative digital project concepts showing how
+                thoughtful design, useful technology and clear planning can
+                come together to address everyday challenges.
+            </p>
+
+            <div class="hero-meta">
+                <span class="meta-pill">Web Experiences</span>
+                <span class="meta-pill">UI/UX Design</span>
+                <span class="meta-pill">Software Concepts</span>
+                <span class="meta-pill">AI Exploration</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <span class="eyebrow">Selected Concepts</span>
+                <h2>Designed around real-world needs.</h2>
+                <p>
+                    Each concept begins with a challenge and explores a
+                    practical direction for solving it through digital design.
+                </p>
+            </div>
+
+            <div class="case-grid">
+
+                <article class="case-card">
+                    <div class="case-art art-lavender">
+                        <div class="art-circle"></div>
+                        <div class="mockup">
+                            <div class="mockup-top">
+                                <span>STUDIO / 01</span>
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <h4 class="mockup-title">A better digital first impression.</h4>
+                            <div class="mockup-line medium"></div>
+                            <div class="mockup-line short"></div>
+                            <div class="mockup-boxes">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-content">
+                        <span class="case-category">Web Design / Concept 01</span>
+                        <h3>Modern Business Website</h3>
+                        <p>
+                            A polished business website concept that organizes
+                            services, communicates value and makes it easier
+                            for visitors to explore and get in touch.
+                        </p>
+                        <div class="case-tags">
+                            <span>Responsive UI</span>
+                            <span>Brand Identity</span>
+                            <span>Navigation</span>
+                        </div>
+                        <a href="services.html" class="case-link">
+                            Explore Our Services ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-art art-rose">
+                        <div class="art-circle"></div>
+                        <div class="mockup">
+                            <div class="mockup-top">
+                                <span>EXPERIENCE / 02</span>
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <h4 class="mockup-title">Less friction. More clarity.</h4>
+                            <div class="mockup-line medium"></div>
+                            <div class="mockup-line short"></div>
+                            <div class="mockup-boxes">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-content">
+                        <span class="case-category">UI/UX / Concept 02</span>
+                        <h3>Student Portal Experience</h3>
+                        <p>
+                            A student-focused portal concept for organizing
+                            important notices, academic information and
+                            everyday campus resources in one place.
+                        </p>
+                        <div class="case-tags">
+                            <span>User Research</span>
+                            <span>Accessibility</span>
+                            <span>Dashboard</span>
+                        </div>
+                        <a href="ui-ux.html" class="case-link">
+                            Explore UI/UX Design ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-art art-sage">
+                        <div class="art-circle"></div>
+                        <div class="mockup">
+                            <div class="mockup-top">
+                                <span>INTELLIGENCE / 03</span>
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <h4 class="mockup-title">Turn information into insight.</h4>
+                            <div class="mockup-line medium"></div>
+                            <div class="mockup-line short"></div>
+                            <div class="mockup-boxes">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-content">
+                        <span class="case-category">AI / Concept 03</span>
+                        <h3>Intelligent Analytics Dashboard</h3>
+                        <p>
+                            An analytics concept that presents complex
+                            information in a clearer format, helping users
+                            explore patterns and understand data.
+                        </p>
+                        <div class="case-tags">
+                            <span>Data Visualization</span>
+                            <span>AI Exploration</span>
+                            <span>Dashboard</span>
+                        </div>
+                        <a href="ai-solutions.html" class="case-link">
+                            Explore AI Solutions ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-art art-cream">
+                        <div class="art-circle"></div>
+                        <div class="mockup">
+                            <div class="mockup-top">
+                                <span>OPERATIONS / 04</span>
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <h4 class="mockup-title">Workflows that make sense.</h4>
+                            <div class="mockup-line medium"></div>
+                            <div class="mockup-line short"></div>
+                            <div class="mockup-boxes">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-content">
+                        <span class="case-category">Software / Concept 04</span>
+                        <h3>Workflow Management System</h3>
+                        <p>
+                            A software concept for arranging tasks,
+                            tracking progress and keeping essential
+                            workflow information organized.
+                        </p>
+                        <div class="case-tags">
+                            <span>Task Management</span>
+                            <span>Software Design</span>
+                            <span>Productivity</span>
+                        </div>
+                        <a href="software.html" class="case-link">
+                            Explore Software Solutions ↗
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="disclaimer">
+                Portfolio transparency: these cards are illustrative concepts,
+                not claims of completed client projects, measured results or
+                verified case studies. Replace them with real project details
+                when available.
+            </div>
+        </section>
+
+        <section class="section process-section">
+            <div class="section-heading">
+                <span class="eyebrow">Our Approach</span>
+                <h2>From first question to final detail.</h2>
+                <p>
+                    A clear process helps keep digital projects organized,
+                    purposeful and easier to improve.
+                </p>
+            </div>
+
+            <div class="process-grid">
+
+                <article class="process-card">
+                    <span class="process-number">01</span>
+                    <h3>Discover</h3>
+                    <p>
+                        Understand the audience, identify the challenge
+                        and clarify the project goals.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">02</span>
+                    <h3>Design</h3>
+                    <p>
+                        Plan the structure, explore visual directions
+                        and map the user experience.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">03</span>
+                    <h3>Develop</h3>
+                    <p>
+                        Build the planned solution using appropriate
+                        tools and a considered technical approach.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">04</span>
+                    <h3>Refine</h3>
+                    <p>
+                        Review the experience, test important details
+                        and identify opportunities to improve.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta-inner">
+                <div>
+                    <span class="eyebrow">Your Idea, Next</span>
+                    <h2>Let's explore what we can create.</h2>
+                    <p>
+                        Have a website, software idea or digital challenge?
+                        Start a conversation and share what you have in mind.
+                    </p>
+                </div>
+
+                <a href="contact.html" class="btn">
+                    Discuss Your Project ↗
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+                    <span class="brand-name">G.TECH</span>
+                    <span class="brand-signature">GHORI</span>
+                </a>
+
+                <p>
+                    Thoughtful design. Meaningful technology.
+                    Digital experiences built around people.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <a href="about.html">About Us</a>
+                <a href="team.html">Our Team</a>
+                <a href="projects.html">Projects</a>
+                <a href="case-studies.html">Case Studies</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Services</h4>
+                <a href="services.html">All Services</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="software.html">Software Solutions</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="faq.html">FAQs</a>
+                <a href="quote.html">Request a Quote</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 G.TECH Technologies. All rights reserved.</p>
+            <div>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```

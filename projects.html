@@ -1,0 +1,1011 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the digital projects, creative concepts and technology solutions of G.TECH Technologies.">
+    <title>Our Projects | G.TECH Technologies</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* PROJECTS PAGE */
+
+        .projects-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 85px;
+            background:
+                radial-gradient(ellipse at 85% 20%, rgba(211,154,155,.24), transparent 35%),
+                radial-gradient(ellipse at 10% 90%, rgba(145,190,179,.22), transparent 34%),
+                #FCFAF7;
+        }
+
+        .projects-hero::after {
+            position: absolute;
+            top: 35px;
+            right: -120px;
+            width: 330px;
+            height: 330px;
+            border: 1px solid rgba(139,106,168,.25);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 25px rgba(139,106,168,.035),
+                0 0 0 50px rgba(139,106,168,.035),
+                0 0 0 75px rgba(139,106,168,.035);
+            content: "";
+            pointer-events: none;
+        }
+
+        .projects-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .projects-hero h1 {
+            margin: 22px 0;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(43px, 7vw, 82px);
+            line-height: 1.08;
+            letter-spacing: -3px;
+        }
+
+        .projects-hero h1 span {
+            color: #8B6AA8;
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .projects-hero p {
+            max-width: 610px;
+            color: #756B7B;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .projects-intro {
+            padding: 80px 0 35px;
+            background: #FFFFFF;
+        }
+
+        .projects-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 35px;
+        }
+
+        .projects-intro h2 {
+            margin: 15px 0 0;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(30px, 4vw, 47px);
+            line-height: 1.2;
+        }
+
+        .projects-intro p {
+            color: #756B7B;
+            line-height: 1.9;
+        }
+
+        .projects-section {
+            padding: 35px 0 100px;
+            background: #FFFFFF;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 35px 25px;
+        }
+
+        .project-card {
+            min-width: 0;
+        }
+
+        .project-visual {
+            position: relative;
+            display: flex;
+            min-height: 310px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 25px;
+            border-radius: 25px;
+            isolation: isolate;
+            transition: box-shadow .35s ease;
+        }
+
+        .project-card:hover .project-visual {
+            box-shadow: 0 20px 45px rgba(48,36,58,.12);
+        }
+
+        .project-visual::before {
+            position: absolute;
+            z-index: -1;
+            width: 230px;
+            height: 230px;
+            border: 1px solid rgba(255,255,255,.45);
+            border-radius: 50%;
+            content: "";
+            transition: transform .6s ease;
+        }
+
+        .project-card:hover .project-visual::before {
+            transform: scale(1.25) rotate(15deg);
+        }
+
+        .visual-lavender {
+            background: linear-gradient(135deg, #E9DDF0, #BFA7D3);
+        }
+
+        .visual-rose {
+            background: linear-gradient(135deg, #F6DFDF, #D39A9B);
+        }
+
+        .visual-sage {
+            background: linear-gradient(135deg, #DDECE6, #91BEB3);
+        }
+
+        .visual-plum {
+            background: linear-gradient(135deg, #8B6AA8, #30243A);
+        }
+
+        .visual-cream {
+            background: linear-gradient(135deg, #FCFAF7, #E8CDB5);
+        }
+
+        .visual-blue {
+            background: linear-gradient(135deg, #DCE3F2, #A5B3D4);
+        }
+
+        .project-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 13px;
+            border: 1px solid rgba(255,255,255,.6);
+            border-radius: 30px;
+            background: rgba(255,255,255,.65);
+            color: #30243A;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+        }
+
+        .project-open {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,.65);
+            border-radius: 50%;
+            background: rgba(255,255,255,.7);
+            color: #30243A;
+            font-size: 20px;
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .project-card:hover .project-open {
+            transform: rotate(45deg);
+            background: #FFFFFF;
+        }
+
+        /* Decorative project previews */
+
+        .preview-browser {
+            width: min(100%, 390px);
+            overflow: hidden;
+            border: 1px solid rgba(48,36,58,.1);
+            border-radius: 14px;
+            background: #FFFFFF;
+            box-shadow: 0 20px 45px rgba(48,36,58,.14);
+            transform: rotate(-3deg);
+            transition: transform .45s ease;
+        }
+
+        .project-card:hover .preview-browser {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .browser-top {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 12px;
+            border-bottom: 1px solid #EEE6F0;
+        }
+
+        .browser-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #D39A9B;
+        }
+
+        .browser-dot:nth-child(2) {
+            background: #91BEB3;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #C6ACD5;
+        }
+
+        .browser-content {
+            padding: 25px 20px;
+        }
+
+        .mock-logo {
+            color: #6D4C87;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .mock-heading {
+            max-width: 230px;
+            margin: 20px 0 10px;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(20px, 3vw, 30px);
+            line-height: 1.15;
+        }
+
+        .mock-lines {
+            display: grid;
+            gap: 6px;
+            margin: 15px 0;
+        }
+
+        .mock-lines span {
+            display: block;
+            width: 85%;
+            height: 5px;
+            border-radius: 5px;
+            background: #E8E0EC;
+        }
+
+        .mock-lines span:last-child {
+            width: 58%;
+        }
+
+        .mock-button {
+            display: inline-block;
+            margin-top: 7px;
+            padding: 9px 15px;
+            border-radius: 25px;
+            background: #6D4C87;
+            color: #FFFFFF;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .phone-preview {
+            width: 170px;
+            padding: 10px;
+            border: 4px solid #30243A;
+            border-radius: 27px;
+            background: #30243A;
+            box-shadow: 0 20px 45px rgba(48,36,58,.18);
+            transform: rotate(5deg);
+            transition: transform .45s ease;
+        }
+
+        .project-card:hover .phone-preview {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .phone-screen {
+            min-height: 235px;
+            overflow: hidden;
+            padding: 17px 12px;
+            border-radius: 18px;
+            background: #FCFAF7;
+        }
+
+        .phone-pill {
+            width: 48px;
+            height: 5px;
+            margin: -9px auto 20px;
+            border-radius: 8px;
+            background: #30243A;
+        }
+
+        .phone-title {
+            margin-bottom: 7px;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .phone-subtitle {
+            color: #756B7B;
+            font-size: 9px;
+            line-height: 1.6;
+        }
+
+        .phone-tile {
+            height: 48px;
+            margin-top: 12px;
+            border-radius: 10px;
+            background: #E9DDF0;
+        }
+
+        .phone-tile:nth-of-type(2) {
+            background: #DDECE6;
+        }
+
+        .phone-tile:nth-of-type(3) {
+            background: #F6DFDF;
+        }
+
+        .design-art {
+            position: relative;
+            display: grid;
+            width: 210px;
+            height: 210px;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,.65);
+            border-radius: 50%;
+            background: rgba(255,255,255,.35);
+            transition: transform .5s ease;
+        }
+
+        .project-card:hover .design-art {
+            transform: rotate(12deg) scale(1.05);
+        }
+
+        .design-art::before,
+        .design-art::after {
+            position: absolute;
+            border: 1px solid rgba(255,255,255,.75);
+            border-radius: 50%;
+            content: "";
+        }
+
+        .design-art::before {
+            inset: 20px;
+        }
+
+        .design-art::after {
+            inset: 45px;
+        }
+
+        .design-art span {
+            color: #FFFFFF;
+            font-family: Georgia, serif;
+            font-size: 75px;
+            font-style: italic;
+        }
+
+        .dashboard-preview {
+            width: min(100%, 400px);
+            padding: 18px;
+            border: 1px solid rgba(255,255,255,.65);
+            border-radius: 15px;
+            background: rgba(255,255,255,.88);
+            box-shadow: 0 20px 45px rgba(48,36,58,.12);
+            transform: rotate(2deg);
+            transition: transform .45s ease;
+        }
+
+        .project-card:hover .dashboard-preview {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .dashboard-title {
+            margin-bottom: 15px;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .dashboard-stat {
+            height: 48px;
+            border-radius: 8px;
+            background: #E9DDF0;
+        }
+
+        .dashboard-stat:nth-child(2) {
+            background: #DDECE6;
+        }
+
+        .dashboard-stat:nth-child(3) {
+            background: #F6DFDF;
+        }
+
+        .dashboard-chart {
+            display: flex;
+            height: 90px;
+            align-items: end;
+            justify-content: space-around;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 9px;
+            background: #F7F4F8;
+        }
+
+        .dashboard-chart span {
+            width: 12%;
+            border-radius: 4px 4px 0 0;
+            background: #8B6AA8;
+        }
+
+        .dashboard-chart span:nth-child(1) { height: 35%; }
+        .dashboard-chart span:nth-child(2) { height: 60%; }
+        .dashboard-chart span:nth-child(3) { height: 45%; }
+        .dashboard-chart span:nth-child(4) { height: 85%; }
+        .dashboard-chart span:nth-child(5) { height: 68%; }
+        .dashboard-chart span:nth-child(6) { height: 100%; }
+
+        .project-info {
+            padding: 21px 4px 0;
+        }
+
+        .project-category {
+            color: #8B6AA8;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .project-info h3 {
+            margin: 10px 0;
+            color: #30243A;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 25px;
+        }
+
+        .project-info p {
+            margin: 0;
+            color: #756B7B;
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .projects-note {
+            margin-top: 45px;
+            padding: 20px 24px;
+            border-left: 3px solid #8B6AA8;
+            background: #F5EFF8;
+            color: #756B7B;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .projects-cta {
+            position: relative;
+            overflow: hidden;
+            margin: 15px auto 85px;
+            padding: 65px 30px;
+            border-radius: 28px;
+            background: #30243A;
+            text-align: center;
+        }
+
+        .projects-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .projects-cta h2 {
+            margin: 18px 0;
+            color: #FFFFFF;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(30px, 5vw, 49px);
+            line-height: 1.2;
+        }
+
+        .projects-cta p {
+            margin-bottom: 28px;
+            color: #E4DCE9;
+            line-height: 1.9;
+        }
+
+        .projects-cta .button {
+            display: inline-flex;
+            padding: 14px 24px;
+            border-radius: 30px;
+            background: #FFFFFF;
+            color: #30243A;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .projects-cta .button:hover {
+            transform: translateY(-4px);
+            background: #F5EFF8;
+        }
+
+        @media (max-width: 850px) {
+            .projects-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .project-visual {
+                min-height: 270px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-hero {
+                padding: 70px 0 60px;
+            }
+
+            .projects-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .projects-intro {
+                padding-top: 60px;
+            }
+
+            .projects-section {
+                padding-bottom: 65px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .project-visual {
+                min-height: 290px;
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            .project-info h3 {
+                font-size: 22px;
+            }
+
+            .projects-cta {
+                margin-bottom: 55px;
+                padding: 50px 20px;
+                border-radius: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .project-visual,
+            .project-visual::before,
+            .project-open,
+            .preview-browser,
+            .phone-preview,
+            .design-art,
+            .dashboard-preview,
+            .projects-cta .button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container navbar">
+
+            <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+                <span class="brand-name">G.TECH</span>
+                <span class="brand-signature">GHORI</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+            <label for="menu-toggle" class="menu-button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="contact.html" class="nav-cta">Let's Talk <span>↗</span></a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="projects-hero">
+            <div class="container projects-hero-content">
+
+                <span class="section-label">OUR WORK · OUR CREATIVE WORLD</span>
+
+                <h1>
+                    Ideas shaped<br>
+                    into <span>experiences.</span>
+                </h1>
+
+                <p>
+                    Every digital experience begins with an idea. Explore
+                    creative concepts and project showcases that reflect
+                    our approach to design, technology and problem-solving.
+                </p>
+
+                <div style="margin-top: 28px;">
+                    <a href="#project-showcase" class="button">
+                        Explore Our Work ↘
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTRO -->
+        <section class="projects-intro">
+            <div class="container projects-intro-grid">
+
+                <div>
+                    <span class="section-label">SELECTED SHOWCASE</span>
+
+                    <h2>
+                        Different ideas.<br>
+                        One creative mindset.
+                    </h2>
+                </div>
+
+                <p>
+                    From web experiences to mobile interfaces and digital
+                    dashboards, our showcase highlights different ways
+                    technology can make everyday interactions more useful,
+                    engaging and memorable.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- PROJECT SHOWCASE -->
+        <section class="projects-section" id="project-showcase">
+            <div class="container">
+
+                <div class="projects-grid">
+
+                    <!-- PROJECT 01 -->
+                    <article class="project-card">
+
+                        <div class="project-visual visual-lavender">
+
+                            <span class="project-label">Web Design</span>
+                            <span class="project-open" aria-hidden="true">↗</span>
+
+                            <div class="preview-browser">
+                                <div class="browser-top">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+
+                                <div class="browser-content">
+                                    <span class="mock-logo">STUDIO / 01</span>
+
+                                    <div class="mock-heading">
+                                        Make room for better ideas.
+                                    </div>
+
+                                    <div class="mock-lines">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+
+                                    <span class="mock-button">Discover More ↗</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">01 — Web Experience</span>
+                            <h3>Creative Studio Website</h3>
+                            <p>
+                                An editorial-inspired website concept with
+                                expressive typography, soft colors and a
+                                clean browsing experience.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 02 -->
+                    <article class="project-card">
+
+                        <div class="project-visual visual-sage">
+
+                            <span class="project-label">Mobile UI/UX</span>
+                            <span class="project-open" aria-hidden="true">↗</span>
+
+                            <div class="phone-preview">
+                                <div class="phone-screen">
+                                    <div class="phone-pill"></div>
+
+                                    <div class="phone-title">Your day, simplified.</div>
+
+                                    <div class="phone-subtitle">
+                                        Keep your plans and daily tasks together.
+                                    </div>
+
+                                    <div class="phone-tile"></div>
+                                    <div class="phone-tile"></div>
+                                    <div class="phone-tile"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">02 — Mobile Experience</span>
+                            <h3>Everyday Companion App</h3>
+                            <p>
+                                A mobile interface concept focused on simple
+                                navigation, readable layouts and organized
+                                daily activities.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 03 -->
+                    <article class="project-card">
+
+                        <div class="project-visual visual-rose">
+
+                            <span class="project-label">Brand Identity</span>
+                            <span class="project-open" aria-hidden="true">↗</span>
+
+                            <div class="design-art">
+                                <span>G.</span>
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">03 — Visual Design</span>
+                            <h3>Modern Brand Identity</h3>
+                            <p>
+                                An artistic visual direction combining
+                                distinctive shapes, balanced typography
+                                and a memorable color palette.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 04 -->
+                    <article class="project-card">
+
+                        <div class="project-visual visual-plum">
+
+                            <span class="project-label">Dashboard Design</span>
+                            <span class="project-open" aria-hidden="true">↗</span>
+
+                            <div class="dashboard-preview">
+                                <div class="dashboard-title">Overview Dashboard</div>
+
+                                <div class="dashboard-stats">
+                                    <div class="dashboard-stat"></div>
+                                    <div class="dashboard-stat"></div>
+                                    <div class="dashboard-stat"></div>
+                                </div>
+
+                                <div class="dashboard-chart">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">04 — Data Experience</span>
+                            <h3>Business Analytics Dashboard</h3>
+                            <p>
+                                A dashboard concept that organizes key
+                                information into clear visual sections
+                                for easier understanding.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 05 -->
+                    <article class="project-card">
+
+                        <div class="project-visual visual-cream">
+
+                            <span class="project-label">E-Commerce</span>
+                            <span class="project-open" aria-hidden="true">↗</span>
+
+                            <div class="preview-browser">
+                                <div class="browser-top">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+
+                                <div class="browser-content">
+                                    <span class="mock-logo">FORM & FUNCTION</span>
+
+                                    <div class="mock-heading">
+                                        Little things. Beautifully made.
+                                    </div>
+
+                                    <div class="mock-lines">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+
+                                    <span class="mock-button">Explore Collection ↗</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">05 — Online Shopping</span>
+                            <h3>Minimal E-Commerce Concept</h3>
+                            <p>
+                                A product-focused online shopping concept
+                                with clean product presentation and a
+                                straightforward customer journey.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 06 -->
+                    <article class="project-card">
+
+                        <div class="project-visual visual-blue">
+
+                            <span class="project-label">Digital Experience</span>
+                            <span class="project-open" aria-hidden="true">↗</span>
+
+                            <div class="design-art">
+                                <span>✳</span>
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">06 — Digital Concept</span>
+                            <h3>Next-Generation Digital Platform</h3>
+                            <p>
+                                A forward-looking concept exploring
+                                approachable digital interactions,
+                                visual clarity and adaptable layouts.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <div class="projects-note">
+                    <strong>Showcase note:</strong>
+                    The visual previews on this page are illustrative design
+                    concepts created with HTML and CSS. They are not claims
+                    of completed client projects.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container">
+            <div class="projects-cta">
+                <div class="projects-cta-content">
+
+                    <span class="section-label">YOUR IDEA COULD BE NEXT</span>
+
+                    <h2>
+                        Have an idea worth bringing to life?
+                    </h2>
+
+                    <p>
+                        Let's talk about your vision and explore how thoughtful
+                        design and technology can help you move forward.
+                    </p>
+
+                    <a href="contact.html" class="button">
+                        Let's Build Something ↗
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-main">
+
+            <div class="footer-column footer-brand-column">
+                <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+                    <span class="brand-name">G.TECH</span>
+                    <span class="brand-signature">GHORI</span>
+                </a>
+
+                <p>
+                    Thoughtful digital experiences, creative technology
+                    and solutions built around your vision.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Discover</h3>
+                <a href="industries.html">Industries</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="team.html">Our Team</a>
+                <a href="careers.html">Careers</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Let's Connect</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="quote.html">Request a Quote</a>
+                <a href="faq.html">FAQs</a>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 G.TECH Technologies. All rights reserved.</p>
+
+            <div>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

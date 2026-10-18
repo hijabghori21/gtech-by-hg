@@ -1,0 +1,768 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about G.TECH Technologies, digital services and project enquiries.">
+    <title>FAQs | G.TECH Technologies</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ivory: #FCFAF7;
+            --white: #FFFFFF;
+            --lavender: #F5EFF8;
+            --purple: #8B6AA8;
+            --plum: #6D4C87;
+            --dark: #30243A;
+            --rose: #D39A9B;
+            --sage: #91BEB3;
+            --muted: #77707C;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--ivory);
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .faq-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 8%;
+            background:
+                radial-gradient(circle at 88% 15%, #dfcfea 0, transparent 28%),
+                radial-gradient(circle at 10% 100%, #f2dede 0, transparent 27%),
+                var(--lavender);
+        }
+
+        .hero-orbit {
+            position: absolute;
+            top: 45px;
+            right: 7%;
+            width: 260px;
+            height: 260px;
+            border: 1px solid #8b6aa833;
+            border-radius: 50%;
+        }
+
+        .hero-orbit::before,
+        .hero-orbit::after {
+            content: "";
+            position: absolute;
+            border: 1px solid #8b6aa833;
+            border-radius: 50%;
+        }
+
+        .hero-orbit::before {
+            inset: 22px;
+        }
+
+        .hero-orbit::after {
+            inset: 44px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--plum);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 24px;
+            height: 2px;
+            background: var(--rose);
+        }
+
+        .faq-hero h1 {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 24px 0;
+            font-size: clamp(43px, 7vw, 80px);
+            line-height: 1.05;
+            letter-spacing: -4px;
+        }
+
+        .faq-hero h1 span {
+            color: var(--purple);
+            font-style: italic;
+        }
+
+        .faq-hero p {
+            position: relative;
+            z-index: 1;
+            max-width: 590px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 22px;
+            border: 1px solid var(--plum);
+            border-radius: 5px;
+            background: var(--plum);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+            transition: transform .3s ease, background .3s ease,
+                        box-shadow .3s ease;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-4px);
+            background: var(--dark);
+            box-shadow: 0 12px 25px #30243a20;
+        }
+
+        .section {
+            padding: 85px 8%;
+        }
+
+        .faq-layout {
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            align-items: start;
+            gap: 65px;
+        }
+
+        .faq-intro {
+            position: sticky;
+            top: 30px;
+        }
+
+        .faq-intro h2 {
+            margin: 18px 0;
+            font-size: clamp(32px, 4vw, 47px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+        }
+
+        .faq-intro p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .intro-decoration {
+            display: grid;
+            place-items: center;
+            width: 150px;
+            height: 150px;
+            margin-top: 28px;
+            border: 1px solid #d9c8e1;
+            border-radius: 50%;
+            background: var(--lavender);
+            color: var(--plum);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 65px;
+            transition: transform .4s ease;
+        }
+
+        .intro-decoration:hover {
+            transform: rotate(12deg) scale(1.04);
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 13px;
+        }
+
+        .faq-item {
+            overflow: hidden;
+            border: 1px solid #e8dfea;
+            border-radius: 10px;
+            background: var(--white);
+            transition: border-color .3s ease, box-shadow .3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #cbb5d7;
+            box-shadow: 0 8px 25px #30243a08;
+        }
+
+        .faq-item[open] {
+            border-color: #cbb5d7;
+            background: #fff;
+        }
+
+        .faq-item summary {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 22px 24px;
+            cursor: pointer;
+            list-style: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--lavender);
+            color: var(--plum);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+            transform: rotate(180deg);
+            background: #f4e1e1;
+        }
+
+        .faq-item summary:focus-visible {
+            outline: 2px solid var(--purple);
+            outline-offset: -4px;
+        }
+
+        .faq-answer {
+            padding: 0 24px 23px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+            animation: reveal .25s ease;
+        }
+
+        .faq-answer a {
+            color: var(--plum);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .faq-note {
+            margin-top: 22px;
+            padding: 15px 18px;
+            border-left: 3px solid var(--sage);
+            background: #eaf3f0;
+            color: #49655f;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .help-section {
+            background: var(--white);
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .help-card {
+            padding: 28px;
+            border: 1px solid #e9e0eb;
+            border-radius: 11px;
+            background: var(--ivory);
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-6px);
+            background: var(--lavender);
+        }
+
+        .help-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--white);
+            color: var(--plum);
+            font-size: 23px;
+        }
+
+        .help-card h3 {
+            margin: 20px 0 10px;
+            font-size: 20px;
+        }
+
+        .help-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .help-card a {
+            display: inline-block;
+            margin-top: 5px;
+            color: var(--plum);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .help-card a:hover {
+            color: var(--purple);
+        }
+
+        .cta {
+            padding: 75px 8%;
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .cta h2 {
+            max-width: 650px;
+            margin: 16px 0;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+        }
+
+        .cta p {
+            max-width: 560px;
+            color: #d0c7d5;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .cta .eyebrow {
+            color: #d8b8e8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 22px;
+            border: 1px solid var(--rose);
+            border-radius: 5px;
+            background: var(--rose);
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 700;
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            background: var(--white);
+            border-color: var(--white);
+        }
+
+        @media (max-width: 900px) {
+            .faq-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .faq-intro {
+                position: static;
+            }
+
+            .intro-decoration {
+                width: 100px;
+                height: 100px;
+                font-size: 45px;
+            }
+
+            .help-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero-orbit {
+                right: -100px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .faq-hero {
+                padding: 75px 6%;
+            }
+
+            .faq-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section {
+                padding: 65px 6%;
+            }
+
+            .faq-item summary {
+                padding: 19px;
+                font-size: 15px;
+            }
+
+            .faq-answer {
+                padding: 0 19px 20px;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                padding: 65px 6%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+            <span class="brand-name">G.TECH</span>
+            <span class="brand-signature">GHORI</span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-button" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="industries.html">Industries</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="faq-hero">
+            <div class="hero-orbit"></div>
+
+            <span class="eyebrow">Frequently Asked Questions</span>
+
+            <h1>Good questions.<br><span>Clear answers.</span></h1>
+
+            <p>
+                Looking for information about our digital services,
+                project process or career opportunities? Start here
+                and explore the answers to common questions.
+            </p>
+
+            <a href="#questions" class="hero-button">Explore FAQs ↓</a>
+        </section>
+
+        <!-- QUESTIONS -->
+        <section class="section" id="questions">
+            <div class="faq-layout">
+
+                <aside class="faq-intro">
+                    <span class="eyebrow">Need To Know</span>
+                    <h2>Everything starts with understanding.</h2>
+                    <p>
+                        Explore common questions about websites,
+                        design, software projects and getting in touch.
+                        If you need more information, contact us directly.
+                    </p>
+
+                    <div class="intro-decoration">?</div>
+                </aside>
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary>What does G.TECH Technologies do?</summary>
+                        <div class="faq-answer">
+                            G.TECH's website presents digital service areas
+                            such as web development, UI/UX design, software
+                            solutions and AI-related concepts. Contact the
+                            team to confirm currently available services.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What types of websites can be created?</summary>
+                        <div class="faq-answer">
+                            Website projects can include business websites,
+                            portfolios, landing pages and other web experiences.
+                            The best solution depends on your goals, features
+                            and technical requirements.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I request a custom software solution?</summary>
+                        <div class="faq-answer">
+                            You can share your software idea, the problem you
+                            want to solve and the features you need. The scope,
+                            feasibility and availability should be discussed
+                            before a project is confirmed.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How does a project usually begin?</summary>
+                        <div class="faq-answer">
+                            A typical starting point is a discussion about
+                            your goals, audience, requirements and timeline.
+                            The next steps can then include planning, design,
+                            development and testing, depending on the project.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How much does a website or app cost?</summary>
+                        <div class="faq-answer">
+                            Cost depends on the project scope, design,
+                            functionality, integrations and maintenance needs.
+                            Share your requirements through the
+                            <a href="contact.html">contact page</a>
+                            to discuss an estimate.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How long does a project take?</summary>
+                        <div class="faq-answer">
+                            Timelines vary according to complexity, the
+                            number of features, content availability and
+                            review cycles. A realistic timeline should be
+                            agreed after the requirements are understood.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I request changes during development?</summary>
+                        <div class="faq-answer">
+                            Project changes can be discussed with the team.
+                            Their effect on the schedule, scope and cost
+                            depends on the agreed project process.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Does G.TECH offer internships?</summary>
+                        <div class="faq-answer">
+                            The Careers page describes example career paths,
+                            but it does not confirm current vacancies.
+                            Contact the team to ask about actual internship
+                            openings and application requirements.
+                            Visit <a href="careers.html">Careers</a> for more.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How can I discuss my project idea?</summary>
+                        <div class="faq-answer">
+                            Visit the <a href="contact.html">Contact page</a>
+                            and share your project goals, preferred features
+                            and any important requirements. The available
+                            contact options depend on the details configured
+                            for the website.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Will my website work on mobile devices?</summary>
+                        <div class="faq-answer">
+                            Responsive design helps a website adapt to
+                            different screen sizes. Mobile compatibility
+                            should be checked across relevant devices
+                            and browsers before launch.
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MORE HELP -->
+        <section class="section help-section">
+            <div class="section-heading">
+                <span class="eyebrow">Still Need Help?</span>
+                <h2>Let's find the right next step.</h2>
+                <p>
+                    Explore more of the website or contact the team
+                    if your question needs a more specific answer.
+                </p>
+            </div>
+
+            <div class="help-grid">
+
+                <article class="help-card">
+                    <div class="help-icon">✳</div>
+                    <h3>Our Services</h3>
+                    <p>
+                        Explore the digital services and technical
+                        areas featured on our website.
+                    </p>
+                    <a href="services.html">Explore Services ↗</a>
+                </article>
+
+                <article class="help-card">
+                    <div class="help-icon">◇</div>
+                    <h3>Our Projects</h3>
+                    <p>
+                        Browse the projects and illustrative concepts
+                        presented in our portfolio.
+                    </p>
+                    <a href="projects.html">View Projects ↗</a>
+                </article>
+
+                <article class="help-card">
+                    <div class="help-icon">↗</div>
+                    <h3>Contact Us</h3>
+                    <p>
+                        Share a question or explain what you need
+                        help with.
+                    </p>
+                    <a href="contact.html">Get In Touch ↗</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="cta-inner">
+                <div>
+                    <span class="eyebrow">Let's Talk</span>
+                    <h2>Your question deserves a clear answer.</h2>
+                    <p>
+                        Have a project in mind or need information
+                        that is not covered here? Visit our contact page.
+                    </p>
+                </div>
+
+                <a href="contact.html" class="cta-button">
+                    Contact G.TECH ↗
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="G.TECH Ghori Home">
+                    <span class="brand-name">G.TECH</span>
+                    <span class="brand-signature">GHORI</span>
+                </a>
+
+                <p>
+                    Thoughtful design. Meaningful technology.
+                    Digital experiences built around people.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <a href="about.html">About Us</a>
+                <a href="team.html">Our Team</a>
+                <a href="projects.html">Projects</a>
+                <a href="case-studies.html">Case Studies</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Services</h4>
+                <a href="services.html">All Services</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="software.html">Software Solutions</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="faq.html">FAQs</a>
+                <a href="quote.html">Request a Quote</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 G.TECH Technologies. All rights reserved.</p>
+            <div>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
